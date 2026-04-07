@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.header {
+  height: 80px;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+  align-items: center;
+  color: #fff;
+  position: relative;
+}
+.logo {
+  color: chocolate;
+  font-size: 26px;
+}
+.hamburger {
+  display: none;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding: 0 3rem;
+    position: relative;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 25px;
+    width: 45px;
+    height: 45px;
+    position: relative;
+  }
+  .hamburger i {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: max-content;
+    height: max-content;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+  .hamburger i.active {
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+  .navbar {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    background-color: #333;
+    left: 0;
+    padding: 0 3rem;
+    opacity: 0;
+    transform: 0.3s ease;
+  }
+
+  .navbar.active {
+    opacity: 1;
+  }
+  .navbar ul {
+    display: block;
+  }
+  .navbar ul li {
+    margin: 20px 0;
+    border-bottom: 1px solid #a4a4a4;
+    padding-bottom: 10px;
+  }
+  ul li:last-child {
+    border-bottom: none;
+  }
+  .navbar ul li a {
+    margin: 0;
+  }
+}
